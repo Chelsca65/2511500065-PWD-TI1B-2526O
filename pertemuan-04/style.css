@@ -11,7 +11,7 @@
         }
 
         header{
-            background: #003366;
+            background: #470606;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -55,7 +55,7 @@
         #home p {
             text-align: justify;
         }
-        
+
         #about p,
         #contact label {
             display: flex;
