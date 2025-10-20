@@ -81,6 +81,15 @@
             transform: translateY(1px);
         }
 
+        @media (max-width: 600px) {
+            header {
+                padding: 16px;
+                position: 16px;
+                top: 0;
+                z-index: 1000;
+            }
+        }
+
         #about p,
         #contact label {
             display: flex;
