@@ -13,5 +13,5 @@ Hari ini, Rabu 22 Oktober 2025, saya mempelajari:
  <li>styling elemen nav mobile class active</li>
  <li>menambah script.js</li>
  <li>menambah menu Toggle click</li>
-
+ <li>script tombol hamburger diklik</li>
 </ol>
