@@ -5,6 +5,7 @@ Nama : Chelsea Clarisa<br>
 
 Hari ini, Rabu 22 Oktober 2025, saya mempelajari:
 <ol>
- <li>copy index.html dan style.css folder pertemuan-04<li>
+ <li>copy index.html dan style.css folder pertemuan-04</li>
  <li>menambah button hamburger</li>
-</ol
+ <li>styling class menu-toggle</li>
+</ol>
