@@ -14,4 +14,5 @@ Hari ini, Rabu 22 Oktober 2025, saya mempelajari:
  <li>menambah script.js</li>
  <li>menambah menu Toggle click</li>
  <li>script tombol hamburger diklik</li>
+ <li>menambahkan fungsi validasi pada form kontak menggunakan alert</li>
 </ol>
