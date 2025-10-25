@@ -15,4 +15,6 @@ Hari ini, Rabu 22 Oktober 2025, saya mempelajari:
  <li>menambah menu Toggle click</li>
  <li>script tombol hamburger diklik</li>
  <li>menambahkan fungsi validasi pada form kontak menggunakan alert</li>
+ <li>menambahkan validasi pada form dan pesan error</li>
+ <li>menambahkan fungsi untuk mengganti ikon tombol saat menu aktif</li>
 </ol>
