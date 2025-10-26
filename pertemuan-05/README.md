@@ -17,4 +17,6 @@ Hari ini, Rabu 22 Oktober 2025, saya mempelajari:
  <li>menambahkan fungsi validasi pada form kontak menggunakan alert</li>
  <li>menambahkan validasi pada form dan pesan error</li>
  <li>menambahkan fungsi untuk mengganti ikon tombol saat menu aktif</li>
+ <li>menambahkan ucapan otomatis saat halaman dimuat</li>
+ <li>tambah layout responsif untuk textarea dan counter pesan</li>
 </ol>
