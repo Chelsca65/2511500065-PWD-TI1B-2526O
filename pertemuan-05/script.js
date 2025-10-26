@@ -8,6 +8,11 @@ document.getElementById("menuToggle").addEventListener("click", function () {
   }
 });
 
+document.getElementById("txtPesan").addEventListener("input", function () { 
+  const panjang = this.value.length; 
+  document.getElementById("charCount").textContent = panjang + "/200 karakter"; 
+}); 
+
 document.addEventListener("DOMContentLoaded", function () {
   
   function setupCharCountLayout() { 
@@ -100,9 +105,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.querySelector("form").addEventListener("submit", function (e) { 
+  const nama = document.getElementById("txtNama").value.trim(); 
+  const email = document.getElementById("txtEmail").value.trim(); 
+  const pesan = document.getElementById("txtPesan").value.trim(); 
+
+  if (nama === "" || email === "" || pesan === "") {
+    alert("Semua kolom wajib diisi!");
+    e.preventDefault();
+  } else {
+    alert("Terima kasih, " + nama + "! Pesan Anda telah dikirim.");
+  }
+});
+
+document.querySelector("form").addEventListener("submit", function (e) { 
   const nama = document.getElementById("txtNama"); 
   const email = document.getElementById("txtEmail"); 
-  const pesan = document.getElementById("txtPesan"); 
+  const pesan = document.getElementById("txtPesan");
  
   document.querySelectorAll(".error-msg").forEach(el => el.remove()); 
   [nama, email, pesan].forEach(el => el.style.border = ""); 
@@ -135,6 +153,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
   } else { 
     alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim."); 
   } 
+
 }); 
 
 function showError(inputElement, message) { 
@@ -189,17 +208,4 @@ window.addEventListener("resize", () => {
     const target = document.getElementById(small.dataset.forId); 
     if (target) alignErrorMessage(small, target); 
   }); 
-});
-
-document.querySelector("form").addEventListener("submit", function (e) {
-  const nama = document.getElementById("txtNama").value.trim();
-  const email = document.getElementById("txtEmail").value.trim();
-  const pesan = document.getElementById("txtPesan").value.trim();
-
-  if (nama === "" || email === "" || pesan === "") {
-    alert("Semua kolom wajib diisi!");
-    e.preventDefault();
-  } else {
-    alert("Terima kasih, " + nama + "! Pesan Anda telah dikirim.");
-  }
 });
