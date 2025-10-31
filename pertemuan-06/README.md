@@ -7,5 +7,6 @@ Nim: 2511500065<br>
 belajar:<br>
 <ol>
     <li>echo di hello.php</li>
-     <li>copy index.html, style css, script.js (pertemuan-05)</li>
+    <li>copy index.html, style css, script.js (pertemuan-05)</li>
+    <li>copy index.html dan rename hasil copy ke index.php</li>
 </ol>
