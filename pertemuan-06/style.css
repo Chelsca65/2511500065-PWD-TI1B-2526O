@@ -212,19 +212,17 @@
                 align-items: flex-start;
             }
 
-           
+            #contact input,
+            #contact textarea,
+            #contact button {
+                width: 100%;
+            }
 
             #about strong,
             #contact label>span {
                 text-align: left;
                 padding-right: 0;
                 margin-bottom: 2px;
-            }
-
-             #contact input,
-            #contact textarea,
-            #contact button {
-                width: 100%;
             }
         }
         

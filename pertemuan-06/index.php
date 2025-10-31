@@ -37,8 +37,9 @@
             <p><strong>Pasangan:</strong> Matthew Ignatius Susanto &hearts;</p>
             <p><strong>Pekerjaan:</strong> Mahasiswi di ISB Atma Luhur &copy; 2025</p>
             <p><strong>Nama Orang Tua:</strong> Bapak Chew Kim Thui dan Ibu Liu Yin Siang</p>
-            <p><strong>Nama Kakak:</strong> Fitri Natalia dan Evans Leonardo</p>
-            <p><strong>Nama Adik:</strong> Jennifer Gracia</p>
+            <p><strong>Nama Kakak Perempuan:</strong> Fitri Natalia</p>
+            <p><strong>Nama Kakak Laki-Laki:</strong> Evans Leonardo</p>
+            <p><strong>Nama Adik Perempuan:</strong> Jennifer Gracia</p>
         </section>
         <section id="contact">
             <h2>Kontak Kami</h2>
@@ -51,7 +52,7 @@
                     <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" autocomplete="email">
                 </label>
 
-                <label for="txtPesan"><span>Pesan Anda:</span>
+                <label for="txtpesan"><span>Pesan Anda:</span>
                     <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
                      <small id="charCount">0/200 karakter</small> 
                 </label>
