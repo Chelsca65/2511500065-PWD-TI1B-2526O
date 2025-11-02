@@ -97,86 +97,8 @@
                 $nilaiHadir3 = 80; $nilaiTugas3 = 80; $nilaiUTS3 = 80; $nilaiUAS3 = 90;
                 $nilaiHadir4 = 90; $nilaiTugas4 = 75; $nilaiUTS4 = 80; $nilaiUAS4 = 85;
                 $nilaiHadir5 = 69; $nilaiTugas5 = 80; $nilaiUTS5 = 90; $nilaiUAS5 = 100;
-
-                function angkaMutu($grade){
-                    switch ($grade) {
-                        case "A": $angkaMutu = 4.00; break;
-                        case "A-": $angkaMutu = 3.70; break;
-                        case "B+": $angkaMutu = 3.30; break;
-                        case "B": $angkaMutu = 3.00; break;
-                        case "C+": $angkaMutu = 2.70; break;
-                        case "C": $angkaMutu = 2.00; break;
-                        case "D+": $angkaMutu = 1.70; break;
-                        case "D": $angkaMutu = 1.00; break;
-                        default: $angkaMutu = 0.00; break;
-                }
-                return $angkaMutu;
-            }
-                
-                 
-                $totalBobot = 0;
-                $totalSks = 0;
-
-                for ($i = 1; $i <= 5; $i++) {
-                    ${"nilaiAkhir$i"} = round((0.1 * ${"nilaiHadir$i"}) + (0.2 * ${"nilaiTugas$i"}) + (0.3 * ${"nilaiUTS$i"}) + (0.4 * ${"nilaiUAS$i"}));
-
-                if (${"nilaiHadir$i"} < 70) {
-                    ${"grade$i"} = "E";
-                } elseif (${"nilaiAkhir$i"} >= 91) {
-                    ${"grade$i"} = "A";
-                } elseif (${"nilaiAkhir$i"} >= 81) {
-                    ${"grade$i"} = "A-";
-                } elseif (${"nilaiAkhir$i"} >= 76) {
-                    ${"grade$i"} = "B+";
-                } elseif (${"nilaiAkhir$i"} >= 71) {
-                    ${"grade$i"} = "B";
-                } elseif (${"nilaiAkhir$i"} >= 66) {
-                    ${"grade$i"} = "C+";
-                } elseif (${"nilaiAkhir$i"} >= 61) {
-                    ${"grade$i"} = "C";
-                } elseif (${"nilaiAkhir$i"} >= 36) {
-                    ${"grade$i"} = "D";
-                } else {
-                    ${"grade$i"} = "E";
-                } 
-
-                if (${"grade$i"} == "D" || ${"grade$i"} == "E") {
-                    ${"status$i"} = "Gagal";
-                } else {
-                    ${"status$i"} = "Lulus";
-                }
-
-                $angkaMutu = angkaMutu(${"grade$i"});
-                ${"bobot$i"} = $angkaMutu * ${"sksMatkul$i"};
-                $totalBobot += ${"bobot$i"};
-                $totalSks += ${"sksMatkul$i"};
-                $ipk = $totalBobot / $totalSks; 
-
-            }
             ?>
 
-            <h2>Nilai Saya</h2>
-            <?php 
-            for ($i = 1; $i <= 5; $i++) { ?>
-            <p><strong>Nama Matakuliah ke-<?php echo $i; ?>:</strong> <span><?php echo ${"namaMatkul$i"}; ?></span></p>
-            <p><strong>SKS:</strong> <span> <?php echo ${"sksMatkul$i"};?></span></p>
-            <p><strong>Kehadiran:</strong> <span><?php echo ${"nilaiHadir$i"}; ?></span></p>
-            <p><strong>Tugas:</strong> <span><?php echo ${"nilaiTugas$i"}; ?></span></p>
-            <p><strong>UTS:</strong> <span><?php echo ${"nilaiUTS$i"}; ?></span></p>
-            <P><strong>UAS:</strong> <span><?php echo ${"nilaiUAS$i"}; ?></span></p>
-            <p><strong>Nilai Akhir: <span></strong> <?php echo (${"nilaiAkhir$i"}); ?></span></p>
-            <p><strong>Grade:</strong> <span><?php echo ${"grade$i"}; ?></span></p>
-            <p><strong>Angka Mutu:</strong> <span><?php echo number_format(angkaMutu(${"grade$i"}), 2); ?></span></p>
-            <p><strong>Bobot:</strong> <span><?php echo number_format (${"bobot$i"}, 2); ?></span></p>
-            <p><strong>Status:</strong> <span><?php echo ${"status$i"}; ?></span></p>
-
-            <?php 
-            } 
-
-            echo "<p><strong>Total Bobot: </strong>" . number_format($totalBobot, 2) . "</p>";
-            echo "<p><strong>Total SKS: </strong>" . $totalSks . "</p>";
-            echo "<p><strong>IPK: </strong>" . number_format($ipk, 2). "</p>";
-        ?>
         </section>
 
     </main>
