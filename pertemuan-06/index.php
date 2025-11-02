@@ -98,6 +98,22 @@
                 $nilaiHadir4 = 90; $nilaiTugas4 = 75; $nilaiUTS4 = 80; $nilaiUAS4 = 85;
                 $nilaiHadir5 = 69; $nilaiTugas5 = 80; $nilaiUTS5 = 90; $nilaiUAS5 = 100;
 
+                    function angkaMutu($grade){
+                    switch ($grade) {
+                        case "A": $angkaMutu = 4.00; break;
+                        case "A-": $angkaMutu = 3.70; break;
+                        case "B+": $angkaMutu = 3.30; break;
+                        case "B": $angkaMutu = 3.00; break;
+                        case "C+": $angkaMutu = 2.70; break;
+                        case "C": $angkaMutu = 2.00; break;
+                        case "D+": $angkaMutu = 1.70; break;
+                        case "D": $angkaMutu = 1.00; break;
+                        default: $angkaMutu = 0.00; break;
+                    }
+                    return $angkaMutu;
+                    }
+
+
                 for ($i = 1; $i <= 5; $i++) {
                     ${"nilaiAkhir$i"} = round((0.1 * ${"nilaiHadir$i"}) + (0.2 * ${"nilaiTugas$i"}) + (0.3 * ${"nilaiUTS$i"}) + (0.4 * ${"nilaiUAS$i"}));
 
@@ -120,6 +136,9 @@
                 } else {
                     ${"grade$i"} = "E";
                 } 
+
+                $angkaMutu = angkaMutu(${"grade$i"});
+
 
                 }
             ?>
