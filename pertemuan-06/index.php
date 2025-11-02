@@ -97,6 +97,11 @@
                 $nilaiHadir3 = 80; $nilaiTugas3 = 80; $nilaiUTS3 = 80; $nilaiUAS3 = 90;
                 $nilaiHadir4 = 90; $nilaiTugas4 = 75; $nilaiUTS4 = 80; $nilaiUAS4 = 85;
                 $nilaiHadir5 = 69; $nilaiTugas5 = 80; $nilaiUTS5 = 90; $nilaiUAS5 = 100;
+
+                for ($i = 1; $i <= 5; $i++) {
+                    ${"nilaiAkhir$i"} = round((0.1 * ${"nilaiHadir$i"}) + (0.2 * ${"nilaiTugas$i"}) + (0.3 * ${"nilaiUTS$i"}) + (0.4 * ${"nilaiUAS$i"}));
+
+                }
             ?>
 
         </section>
