@@ -140,6 +140,13 @@
                 $angkaMutu = angkaMutu(${"grade$i"});
                 ${"bobot$i"} = $angkaMutu * ${"sksMatkul$i"};
 
+                if (${"grade$i"} == "D" || ${"grade$i"} == "E") {
+                    ${"status$i"} = "Gagal";
+                } else {
+                    ${"status$i"} = "Lulus";
+                }
+
+
 
 
                 }
