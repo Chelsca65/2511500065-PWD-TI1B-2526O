@@ -146,9 +146,9 @@
                     ${"status$i"} = "Lulus";
                 }
 
-
-
-
+                $totalBobot += ${"bobot$i"};
+                $totalSks += ${"sksMatkul$i"};
+                $ipk = $totalBobot / $totalSks; 
                 }
             ?>
 
