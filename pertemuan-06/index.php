@@ -158,26 +158,25 @@
             <h2>Nilai Saya</h2>
             <?php 
             for ($i = 1; $i <= 5; $i++) { ?>
-            <p><strong>Nama Matakuliah ke-<?php echo $i; ?>:</strong> <?php echo ${"namaMatkul$i"}; ?></p>
-            <p><strong>SKS:</strong> <?php echo ${"sksMatkul$i"};?></p>
-            <p><strong>Kehadiran:</strong> <?php echo ${"nilaiHadir$i"}; ?></p>
-            <p><strong>Tugas:</strong> <?php echo ${"nilaiTugas$i"}; ?></p>
-            <p><strong>UTS:</strong> <?php echo ${"nilaiUTS$i"}; ?></p>
-            <P><strong>UAS:</strong> <?php echo ${"nilaiUAS$i"}; ?></p>
-            <p><strong>Nilai Akhir:</strong> <?php echo (${"nilaiAkhir$i"}); ?></p>
-            <p><strong>Grade:</strong> <?php echo ${"grade$i"}; ?></p>
-            <p><strong>Angka Mutu:</strong> <?php echo number_format(angkaMutu(${"grade$i"}), 2); ?></p>
-            <p><strong>Bobot:</strong> <?php echo number_format (${"bobot$i"}, 2); ?></p>
-            <p><strong>Status:</strong> <?php echo ${"status$i"}; ?></p>
+            <p><strong>Nama Matakuliah ke-<?php echo $i; ?>:</strong> <span><?php echo ${"namaMatkul$i"}; ?></span></p>
+            <p><strong>SKS:</strong> <span> <?php echo ${"sksMatkul$i"};?></span></p>
+            <p><strong>Kehadiran:</strong> <span><?php echo ${"nilaiHadir$i"}; ?></span></p>
+            <p><strong>Tugas:</strong> <span><?php echo ${"nilaiTugas$i"}; ?></span></p>
+            <p><strong>UTS:</strong> <span><?php echo ${"nilaiUTS$i"}; ?></span></p>
+            <P><strong>UAS:</strong> <span><?php echo ${"nilaiUAS$i"}; ?></span></p>
+            <p><strong>Nilai Akhir: <span></strong> <?php echo (${"nilaiAkhir$i"}); ?></span></p>
+            <p><strong>Grade:</strong> <span><?php echo ${"grade$i"}; ?></span></p>
+            <p><strong>Angka Mutu:</strong> <span><?php echo number_format(angkaMutu(${"grade$i"}), 2); ?></span></p>
+            <p><strong>Bobot:</strong> <span><?php echo number_format (${"bobot$i"}, 2); ?></span></p>
+            <p><strong>Status:</strong> <span><?php echo ${"status$i"}; ?></span></p>
 
             <?php 
+            } 
+
             echo "<p><strong>Total Bobot: </strong>" . number_format($totalBobot, 2) . "</p>";
             echo "<p><strong>Total SKS: </strong>" . $totalSks . "</p>";
             echo "<p><strong>IPK: </strong>" . number_format($ipk, 2). "</p>";
-            } 
         ?>
-        
-
         </section>
 
     </main>

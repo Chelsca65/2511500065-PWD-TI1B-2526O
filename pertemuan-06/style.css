@@ -97,7 +97,7 @@
         }
 
         header ul {
-            flex-direction: column;
+             flex-direction: column;
             align-items: stretch;
             gap: 8px;
             margin: 8px 0 0;
@@ -225,12 +225,46 @@
                 margin-bottom: 2px;
             }
             
-            #ipk {
-                background-color: #5b0000;
-            }
-
-            
         }
 
+        #ipk {
+            background-color: #fff1ef;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 700px;
+            margin : 20px auto;
+            box-shadow:  0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         
+        #ipk h2 {
+            color:#470606;
+            border-bottom: 2px solid #470606;
+            padding-bottom: 6px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        #ipk p {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin: 0;
+        padding: 6px 0;
+        border-bottom: 1px solid #470606;
+        }
+
+        #ipk strong {
+            min-width: 180px;
+            color: #470606;
+            font-weight: 600;
+            text-align: left;
+            flex-shrink: 0;
+        }
+
+        #ipk span {
+            text-align: left;
+        }
+
+       
+
         
