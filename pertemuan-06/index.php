@@ -138,6 +138,8 @@
                 } 
 
                 $angkaMutu = angkaMutu(${"grade$i"});
+                ${"bobot$i"} = $angkaMutu * ${"sksMatkul$i"};
+
 
 
                 }
