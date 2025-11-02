@@ -101,6 +101,26 @@
                 for ($i = 1; $i <= 5; $i++) {
                     ${"nilaiAkhir$i"} = round((0.1 * ${"nilaiHadir$i"}) + (0.2 * ${"nilaiTugas$i"}) + (0.3 * ${"nilaiUTS$i"}) + (0.4 * ${"nilaiUAS$i"}));
 
+                if (${"nilaiHadir$i"} < 70) {
+                    ${"grade$i"} = "E";
+                } elseif (${"nilaiAkhir$i"} >= 91) {
+                    ${"grade$i"} = "A";
+                } elseif (${"nilaiAkhir$i"} >= 81) {
+                    ${"grade$i"} = "A-";
+                } elseif (${"nilaiAkhir$i"} >= 76) {
+                    ${"grade$i"} = "B+";
+                } elseif (${"nilaiAkhir$i"} >= 71) {
+                    ${"grade$i"} = "B";
+                } elseif (${"nilaiAkhir$i"} >= 66) {
+                    ${"grade$i"} = "C+";
+                } elseif (${"nilaiAkhir$i"} >= 61) {
+                    ${"grade$i"} = "C";
+                } elseif (${"nilaiAkhir$i"} >= 36) {
+                    ${"grade$i"} = "D";
+                } else {
+                    ${"grade$i"} = "E";
+                } 
+
                 }
             ?>
 
