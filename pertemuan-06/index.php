@@ -116,8 +116,6 @@
                     $totalBobot = 0;
                     $totalSks = 0;
 
-
-
                 for ($i = 1; $i <= 5; $i++) {
                     ${"nilaiAkhir$i"} = round((0.1 * ${"nilaiHadir$i"}) + (0.2 * ${"nilaiTugas$i"}) + (0.3 * ${"nilaiUTS$i"}) + (0.4 * ${"nilaiUAS$i"}));
 
@@ -177,9 +175,7 @@
             echo "<p><strong>Total Bobot : </strong> <span>" . number_format($totalBobot, 2) . "</span></p>";
             echo "<p><strong>Total SKS : </strong><span>" . $totalSks . "</span></p>";
             echo "<p><strong>IPK : </strong><span>" . number_format($ipk, 2). "</span></p>";
-
-
-
+            
             ?>
 
         </section>
