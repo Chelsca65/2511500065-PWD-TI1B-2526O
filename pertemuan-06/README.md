@@ -15,5 +15,6 @@ belajar:<br>
     <li>menentukan nilai angka mutu berdasarkan grade</li>
     <li>menghitung bobot tiap mata kuliah</li>
     <li>penentuan status lulus atau tidak berdasarkan grade</li>
-    <li>perhitungan total bobot, total sks, dan ipk</li?>
+    <li>perhitungan total bobot, total sks, dan ipk</li>
+    <li>membuat styling untuk section ipk</li>
 </ol>
