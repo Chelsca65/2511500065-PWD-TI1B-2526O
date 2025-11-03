@@ -112,9 +112,11 @@
                     }
                     return $angkaMutu;
                     }
+                      
+                    $totalBobot = 0;
+                    $totalSks = 0;
 
-                      $totalBobot = 0;
-                      $totalSks = 0;
+
 
                 for ($i = 1; $i <= 5; $i++) {
                     ${"nilaiAkhir$i"} = round((0.1 * ${"nilaiHadir$i"}) + (0.2 * ${"nilaiTugas$i"}) + (0.3 * ${"nilaiUTS$i"}) + (0.4 * ${"nilaiUAS$i"}));
@@ -157,24 +159,27 @@
             <h2>Nilai Saya</h2>
             <?php 
             for ($i = 1; $i <= 5; $i++) { ?>
-            <p><strong>Nama Matakuliah ke-<?php echo $i; ?>:</strong> <span><?php echo ${"namaMatkul$i"}; ?></span></p>
-            <p><strong>SKS:</strong> <span> <?php echo ${"sksMatkul$i"};?></span></p>
-            <p><strong>Kehadiran:</strong> <span><?php echo ${"nilaiHadir$i"}; ?></span></p>
-            <p><strong>Tugas:</strong> <span><?php echo ${"nilaiTugas$i"}; ?></span></p>
-            <p><strong>UTS:</strong> <span><?php echo ${"nilaiUTS$i"}; ?></span></p>
-            <P><strong>UAS:</strong> <span><?php echo ${"nilaiUAS$i"}; ?></span></p>
-            <p><strong>Nilai Akhir: <span></strong> <?php echo (${"nilaiAkhir$i"}); ?></span></p>
-            <p><strong>Grade:</strong> <span><?php echo ${"grade$i"}; ?></span></p>
-            <p><strong>Angka Mutu:</strong> <span><?php echo number_format(angkaMutu(${"grade$i"}), 2); ?></span></p>
-            <p><strong>Bobot:</strong> <span><?php echo number_format (${"bobot$i"}, 2); ?></span></p>
-            <p><strong>Status:</strong> <span><?php echo ${"status$i"}; ?></span></p>
+            <p><strong>Nama Matakuliah ke-<?php echo $i; ?> : </strong> <span> <?php echo  ${"namaMatkul$i"}; ?></span></p>
+            <p><strong>SKS : </strong> <span> <?php echo ${"sksMatkul$i"};?></span></p>
+            <p><strong>Kehadiran : </strong> <span><?php echo ${"nilaiHadir$i"}; ?></span></p>
+            <p><strong>Tugas : </strong> <span><?php echo ${"nilaiTugas$i"}; ?></span></p>
+            <p><strong>UTS : </strong> <span><?php echo ${"nilaiUTS$i"}; ?></span></p>
+            <P><strong>UAS : </strong> <span><?php echo ${"nilaiUAS$i"}; ?></span></p>
+            <p><strong>Nilai Akhir : </strong> <span><?php echo (${"nilaiAkhir$i"}); ?></span></p>
+            <p><strong>Grade : </strong> <span><?php echo ${"grade$i"}; ?></span></p>
+            <p><strong>Angka Mutu : </strong> <span><?php echo number_format(angkaMutu(${"grade$i"}), 2); ?></span></p>
+            <p><strong>Bobot : </strong> <span><?php echo number_format (${"bobot$i"}, 2); ?></span></p>
+            <p class="status-line"><strong>Status : </strong> <span><?php echo ${"status$i"}; ?></span></p>
 
             <?php 
             } 
 
-            echo "<p><strong>Total Bobot: </strong>" . number_format($totalBobot, 2) . "</p>";
-            echo "<p><strong>Total SKS: </strong>" . $totalSks . "</p>";
-            echo "<p><strong>IPK: </strong>" . number_format($ipk, 2). "</p>";
+            echo "<p><strong>Total Bobot : </strong> <span>" . number_format($totalBobot, 2) . "</span></p>";
+            echo "<p><strong>Total SKS : </strong><span>" . $totalSks . "</span></p>";
+            echo "<p><strong>IPK : </strong><span>" . number_format($ipk, 2). "</span></p>";
+
+
+
             ?>
 
         </section>
