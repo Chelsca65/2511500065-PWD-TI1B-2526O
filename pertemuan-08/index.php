@@ -56,6 +56,53 @@ endif;
 
     <section id="data">
      <h2>Entry Data Mahasiswa</h2> 
+
+     <form action="proses.php" method="POST">
+
+      <label for="txtNIM"><span>NIM:</span>
+          <input type="text" id="txtNIM" name="txtNIM" placeholder="Masukkan NIM" required autocomplete="userid">
+        </label>
+
+           <label for="txtNama"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan Nama Lengkap" required autocomplete="name">
+        </label>
+
+             <label for="txtTempatLahir"><span>Tempat Lahir:</span>
+          <input type="text" id="txtTempatLahir" name="txtTempatLahir" placeholder="Masukkan Tempat Lahir" required autocomplete="city">
+        </label>
+
+           <label for="txtTanggalLahir"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTanggalLahir" name="txtTanggalLahir" placeholder="Masukkan Tanggal Lahir" required autocomplete="bday">
+        </label>
+
+         <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required autocomplete="Hobby">
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Nama Pasangan" required autocomplete="love">
+        </label>
+
+                <label for="txtPekerjaan"><span>Pekerjaan:</span>
+          <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan Pekerjaan" required autocomplete="work">
+        </label>
+
+            <label for="txtOrtu"><span>Nama Orangtua:</span>
+          <input type="text" id="txtOrtu" name="txtOrtu" placeholder="Masukkan Nama Orang Tua" required autocomplete="parent">
+        </label>
+
+         <label for="txtKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtKakak" name="txtKakak" placeholder="Masukkan Nama Kakak" required autocomplete="sibling">
+        </label>
+
+                <label for="txtAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtAdik" name="txtAdik" placeholder="Masukkan Nama Adik" required autocomplete="sibling">
+        </label>
+
+         <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
 </section>
 
 
