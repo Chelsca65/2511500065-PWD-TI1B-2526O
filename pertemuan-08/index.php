@@ -99,7 +99,7 @@ endif;
           <input type="text" id="txtAdik" name="txtAdik" placeholder="Masukkan Nama Adik" required autocomplete="sibling">
         </label>
 
-         <button type="submit">Kirim</button>
+          <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>
 
