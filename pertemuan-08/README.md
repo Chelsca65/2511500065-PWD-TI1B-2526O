@@ -8,7 +8,7 @@ Hari ini, Kamis 13.Nov.2025 saya belajar:<br>
     <li>buat section baru dan judul Entry Data Mahasiswa</li>
     <li>Menambahkan form entry data mahasiswa lengkap serta tombol kirim dan batal</li>
     <li>styling section#data</li>
-    <li></li>
+    <li>menambahkan proses penyimpanan data mahasiswa ke session dan update form input</li>
     <li></li>
     <li></li>
     <li></li>

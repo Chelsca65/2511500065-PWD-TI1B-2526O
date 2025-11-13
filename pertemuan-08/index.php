@@ -11,9 +11,59 @@ if (isset($_SESSION["sesemail"])):
   $sesemail = $_SESSION["sesemail"];
 endif;
 
-$sespesan = "";
+$sespesan= "";
 if (isset($_SESSION["sespesan"])):
   $sespesan = $_SESSION["sespesan"];
+endif;
+
+$sesnim = "";
+if (isset($_SESSION["sesnim"])):
+  $sesnim = $_SESSION["sesnim"];
+endif;
+
+$sesNama = "";
+if (isset($_SESSION["sesNama"])):
+  $sesNama = $_SESSION["sesNama"];
+endif;
+
+$sestempat = "";
+if (isset($_SESSION["sestempat"])):
+  $sestempat = $_SESSION["sestempat"];
+endif;
+
+$sestanggal = "";
+if (isset($_SESSION["sestanggal"])):
+  $sestanggal = $_SESSION["sestanggal"];
+endif;
+
+$seshobi = "";
+if (isset($_SESSION["seshobi"])):
+  $seshobi = $_SESSION["seshobi"];
+endif;
+
+$sespasangan = "";
+if (isset($_SESSION["sespasangan"])):
+  $sespasangan = $_SESSION["sespasangan"];
+endif;
+
+$sespekerjaan = "";
+if (isset($_SESSION["sespekerjaan"])):
+  $sespekerjaan = $_SESSION["sespekerjaan"];
+endif;
+
+$sesortu = "";
+if (isset($_SESSION["sesortu"])):
+  $sesortu = $_SESSION["sesortu"];
+endif;
+
+$seskakak = "";
+if (isset($_SESSION["seskakak"])):
+  $seskakak = $_SESSION["seskakak"];
+endif;
+
+$sesadik = "";
+if (isset($_SESSION["sesadik"])):
+  $sesadik = $_SESSION["sesadik"];
 endif;
 ?>
 
@@ -107,32 +157,18 @@ endif;
 
 
     <section id="about">
-      <?php
-      $nim = 2511500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
-      ?>
       <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong>
-        <?php
-        echo $NIM;
-        ?>
-      </p>
-      <p><strong>Nama Lengkap:</strong>
-        <?php
-        echo $Nama;
-        ?> &#128526;
-      </p>
-      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
+      <p><strong>NIM:</strong> <?php echo $sesnim; ?></p>
+      <p><strong>Nama Lengkap:</strong> <?php echo $sesNama; ?></p>
+      <p><strong>Tempat Lahir:</strong> <?php echo $sestempat; ?></p>
+      <p><strong>Tanggal Lahir:</strong><?php echo $sestanggal; ?></p>
+      <p><strong>Hobi:</strong><?php echo $seshobi; ?> </p>
       <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
       <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
       <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
+      <p><strong>Nama Kakak:</strong> <?php echo $seskakak ?></p>
+      <p><strong>Nama Adik:</strong> <?php echo $sesadik ?></p>
+     
     </section>
 
     <section id="contact">
