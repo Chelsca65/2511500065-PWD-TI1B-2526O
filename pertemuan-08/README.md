@@ -7,7 +7,7 @@ Hari ini, Kamis 13.Nov.2025 saya belajar:<br>
     <li>copy dan ekstrak seluruh file dari elearning (punya dosen)</li>
     <li>buat section baru dan judul Entry Data Mahasiswa</li>
     <li>Menambahkan form entry data mahasiswa lengkap serta tombol kirim dan batal</li>
-    <li></li>
+    <li>styling section#data</li>
     <li></li>
     <li></li>
     <li></li>
