@@ -38,6 +38,7 @@ endif;
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#contact">Kontak</a></li>
+        <li><a href="#data">Entry Data Mahasiswa</a></li>
       </ul>
     </nav>
   </header>
@@ -51,6 +52,12 @@ endif;
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
+
+
+    <section id="data">
+     <h2>Entry Data Mahasiswa</h2> 
+</section>
+
 
     <section id="about">
       <?php
