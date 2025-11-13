@@ -1,12 +1,17 @@
-# pertemuan-08
+NIM : 2511500065<br>
+Nama : Chelsea Clarisa<br>
 
-silahkan sesuaikan dengan milik kalian masing-masing:<br><br>
-Hari ini, Rabu 12.NOV.2025, saya:<br>
-NIM: 0344300002<br>
-Nama: Yohanes Setiawan Japriadi<br>
-Kelompok: TI1A<br>
-<br>
-Proses saya mengerjakan UTS ini sebagai berikut:<br>
+
+Hari ini, Kamis 13.Nov.2025 saya belajar:<br>
 <ol>
-  <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
+    <li>copy dan ekstrak seluruh file dari elearning (punya dosen)</li>
+    <li>buat section baru</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
 </ol>
