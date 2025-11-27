@@ -1,3 +1,72 @@
+<?php
+session_start();
+
+$sesnama = "";
+if (isset($_SESSION["nama"])):
+  $sesnama = $_SESSION["nama"];
+endif;
+
+$sesemail = "";
+if (isset($_SESSION["email"])):
+  $sesemail = $_SESSION["email"];
+endif;
+
+$sespesan= "";
+if (isset($_SESSION["pesan"])):
+  $sespesan = $_SESSION["pesan"];
+endif;
+
+$sesnim = "";
+if (isset($_SESSION["nim"])):
+  $sesnim = $_SESSION["nim"];
+endif;
+
+$sesNama = "";
+if (isset($_SESSION["Nama"])):
+  $sesNama = $_SESSION["Nama"];
+endif;
+
+$sestempat = "";
+if (isset($_SESSION["tempat"])):
+  $sestempat = $_SESSION["tempat"];
+endif;
+
+$sestanggal = "";
+if (isset($_SESSION["tanggal"])):
+  $sestanggal = $_SESSION["tanggal"];
+endif;
+
+$seshobi = "";
+if (isset($_SESSION["hobi"])):
+  $seshobi = $_SESSION["hobi"];
+endif;
+
+$sespasangan = "";
+if (isset($_SESSION["pasangan"])):
+  $sespasangan = $_SESSION["pasangan"];
+endif;
+
+$sespekerjaan = "";
+if (isset($_SESSION["pekerjaan"])):
+  $sespekerjaan = $_SESSION["pekerjaan"];
+endif;
+
+$sesortu = "";
+if (isset($_SESSION["ortu"])):
+  $sesortu = $_SESSION["ortu"];
+endif;
+
+$seskakak = "";
+if (isset($_SESSION["kakak"])):
+  $seskakak = $_SESSION["kakak"];
+endif;
+
+$sesadik = "";
+if (isset($_SESSION["adik"])):
+  $sesadik = $_SESSION["adik"];
+endif;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,7 +173,7 @@
 
     <section id="contact">
       <h2>Kontak Kami</h2>
-      <form action="proses2.php" method="POST">
+      <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
@@ -124,10 +193,10 @@
         <button type="reset">Batal</button>
       </form>
 
-      <?php if (!empty($sesNama)): ?>
+      <?php if (!empty($sesnama)): ?>
         <br><hr>
         <h2>Yang menghubungi kami</h2>
-        <p><strong>Nama :</strong> <?php echo $sesNama ?></p>
+        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>

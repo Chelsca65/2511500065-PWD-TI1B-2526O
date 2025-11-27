@@ -1,38 +1,29 @@
 <?php
 session_start();
-$sesnama = $_POST["txtNama"];
-$sesemail = $_POST["txtEmail"];
-$sespesan = $_POST["txtPesan"];
-$_SESSION["sesnama"] = $sesnama;
-$_SESSION["sesemail"] = $sesemail;
-$_SESSION["sespesan"] = $sespesan;
+$_session["nim"] = $_POST["txtNIM"];
+$_SESSION["nama"] = $_POST["txtNama"];
+$_SESSION["tempat"] = $_POST["txtTempatLahir"];
+$_SESSION["tanggal"] = $_POST["txtTanggalLahir"];
+$_SESSION["hobi"] = $_POST["txtHobi"];
+$_SESSION["pasangan"] = $_POST["txtPasangan"];
+$_SESSION["pekerjaan"] = $_POST["txtPekerjaan"];
+$_SESSION["ortu"] = $_POST["txtOrtu"];
+$_SESSION["kakak"] = $_POST["txtKakak"];
+$_SESSION["adik"] = $_POST["txtAdik"];
+
+$sesnim = $_SESSION["nim"];
+$sesNama = $_SESSION["nama"];
+$sestempat = $_SESSION["tempat"];
+$sestanggal = $_SESSION["tanggal"];
+$seshobi = $_SESSION["hobi"];
+$sespasangan = $_SESSION["pasangan"];
+$sespekerjaan = $_SESSION["pekerjaan"];
+$sesortu = $_SESSION["ortu"];
+$seskakak = $_SESSION["kakak"];
+$sesadik = $_SESSION["adik"];
+
+echo $_SESSION["nim"] . $_SESSION["nama"] . $_SESSION["tempat"] . $_SESSION["tanggal"] . $_SESSION["hobi"] . $_SESSION["pasangan"] . $_SESSION["pekerjaan"] . $_SESSION["ortu"] . $_SESSION["kakak"] . $_SESSION["adik"];
 header("location: index.php");
 ?>
 
-<?php
-session_start();
-$sesnim = $_POST["txtNIM"];
-$sesNama = $_POST["txtNama"];
-$sestempat = $_POST["txtTempatLahir"];
-$sestanggal = $_POST["txtTanggalLahir"];
-$seshobi = $_POST["txtHobi"];
-$sespasangan = $_POST["txtPasangan"];
-$sespekerjaan = $_POST["txtPekerjaan"];
-$sesortu = $_POST["txtOrtu"];
-$seskakak = $_POST["txtKakak"];
-$sesadik = $_POST["txtAdik"];
 
-
-$_SESSION["sesnim"] = $sesnim;
-$_SESSION["sesNama"] = $sesNama;
-$_SESSION["sestempat"] = $sestempat;
-$_SESSION["sestanggal"] = $sestanggal;
-$_SESSION["seshobi"] = $seshobi;
-$_SESSION["sespasangan"] = $sespasangan;
-$_SESSION["sespekerjaan"] = $sespekerjaan;
-$_SESSION["sesortu"] = $sesortu;
-$_SESSION["seskakak"] = $seskakak;
-$_SESSION["sesadik"] = $sesadik;
-
-header("location:index.php#data");
-?>
