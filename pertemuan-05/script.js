@@ -16,8 +16,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
  
   document.querySelectorAll(".error-msg").forEach(el => el.remove()); 
   [nama, email, pesan].forEach(el => el.style.border = ""); 
- 
-  let isValid = true; 
+  
+ let isValid = true; 
  
   if (nama.value.trim().length < 3) { 
     showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong."); 
