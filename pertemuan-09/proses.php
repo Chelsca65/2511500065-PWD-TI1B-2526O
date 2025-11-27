@@ -20,8 +20,6 @@ $arrBiodata = [
 "adik"=> $_POST["txtNmAdik"] ?? ""
 ];
 
-foreach ($dataBiodata as $k => $a)
-
 $_SESSION["txtNim"] = $txtNim;
 $_SESSION["txtNmLengkap"] = $txtNmLengkap;
 $_SESSION["txtT4Lhr"] = $txtT4Lhr;
