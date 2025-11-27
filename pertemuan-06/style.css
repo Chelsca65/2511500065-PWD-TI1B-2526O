@@ -1,5 +1,9 @@
         * {
+<<<<<<< HEAD
+            box-sizing: border-box;
+=======
         box-sizing: border-box;
+>>>>>>> 2b37efd729b0b86c9a3d2faea26f8ba3fe64a4b2
         }
 
         body {
@@ -33,8 +37,12 @@
         
         #home,
         #about,
+<<<<<<< HEAD
+        #contact {
+=======
         #contact,
         #ipk {
+>>>>>>> 2b37efd729b0b86c9a3d2faea26f8ba3fe64a4b2
             background-color: #fff1ef;
             border-radius: 10px;
             padding: 20px;
@@ -45,8 +53,12 @@
 
         #home h2,
         #about h2,
+<<<<<<< HEAD
+        #contact h2 {
+=======
         #contact h2,
         #ipk h2 {
+>>>>>>> 2b37efd729b0b86c9a3d2faea26f8ba3fe64a4b2
             color: #470606;
             border-bottom: 2px solid #470606;
             padding-bottom: 6px;
@@ -124,8 +136,12 @@
         }
 
         #about strong,           
+<<<<<<< HEAD
+        #contact label>span {
+=======
         #contact label>span,
         #ipk strong {
+>>>>>>> 2b37efd729b0b86c9a3d2faea26f8ba3fe64a4b2
             min-width: 180px;
             color: #470606;
             font-weight: 600;
@@ -215,6 +231,8 @@
                 align-items: flex-start;
             }
 
+<<<<<<< HEAD
+=======
             #about strong,
             #contact label>span,
             #ipk strong {
@@ -223,10 +241,21 @@
                 margin-bottom: 2px;
             }
 
+>>>>>>> 2b37efd729b0b86c9a3d2faea26f8ba3fe64a4b2
             #contact input,
             #contact textarea,
             #contact button {
                 width: 100%;
             }
+<<<<<<< HEAD
+
+            #about strong,
+            #contact label>span {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 2px;
+            }
+=======
+>>>>>>> 2b37efd729b0b86c9a3d2faea26f8ba3fe64a4b2
         }
         

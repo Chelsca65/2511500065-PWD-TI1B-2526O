@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  
     function setupCharCountLayout() { 
     const label = document.querySelector('label[for="txtPesan"]'); 
     if (!label) return; 
