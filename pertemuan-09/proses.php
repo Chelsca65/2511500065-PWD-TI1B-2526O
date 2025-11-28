@@ -1,11 +1,14 @@
 <?php
 session_start();
-$sesnama = $_POST["txtNama"];
-$sesemail = $_POST["txtEmail"];
-$sespesan = $_POST["txtPesan"];
-$_SESSION["sesnama"] = $sesnama;
-$_SESSION["sesemail"] = $sesemail;
-$_SESSION["sespesan"] = $sespesan;
+
+$arrkontak = [
+"Nama" => $_POST["txtNama"] ?? "",
+"email" => $_POST["txtEmail"] ?? "",
+"pesan" => $_POST["txtPesan"] ?? "",
+];
+
+$_SESSION["kontak"] = $arrkontak;
+header("location: index.php#contact");
 
 $arrBiodata = [
 "nim" => $_POST["txtNim"] ?? "",
