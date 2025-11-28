@@ -10,6 +10,7 @@ Hari ini, Kamis 27.Nov.2025 saya belajar:<br>
     <li>Tambah array associative $arrBiodata pada proses.php</li>    
     <li>Update proses.php pakai array biodata</li>
     <li>Menambahkan $fieldConfig</li>
-    <li>Ganti kode bagian tentang saya dengan foreach</li>
+    <li>Hapus dan ganti kode bagian tentang saya dengan foreach</li>
+    <li>Menambahkan file baru dengan nama fungsi.php</li>
     
 </ol>
