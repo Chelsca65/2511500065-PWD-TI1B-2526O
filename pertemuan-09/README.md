@@ -12,5 +12,6 @@ Hari ini, Kamis 27.Nov.2025 saya belajar:<br>
     <li>Menambahkan $fieldConfig</li>
     <li>Hapus dan ganti kode bagian tentang saya dengan foreach</li>
     <li>Menambahkan file baru dengan nama fungsi.php</li>
+    <li>Tambah fungsi bersihkan dan tidakkosong</li>
     
 </ol>
