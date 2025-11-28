@@ -16,5 +16,6 @@ Hari ini, Kamis 27.Nov.2025 saya belajar:<br>
     <li>menambahkan fungsi formattanggal</li>
     <li>Tambahkan fungsi tampilkanbiodata</li>
     <li>Ganti foreach dengan tampilkanBiodata()</li>
+    <li>tambahkan kode require_once pada baris awal file index.php</li>
 
 </ol>
