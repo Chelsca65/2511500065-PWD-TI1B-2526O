@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-$arrkontak = [
+$arrKontak = [
 "Nama" => $_POST["txtNama"] ?? "",
 "email" => $_POST["txtEmail"] ?? "",
 "pesan" => $_POST["txtPesan"] ?? "",
 ];
 
-$_SESSION["kontak"] = $arrkontak;
+$_SESSION["kontak"] = $arrKontak;
 header("location: index.php#contact");
 
 $arrBiodata = [
