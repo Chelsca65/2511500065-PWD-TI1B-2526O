@@ -14,5 +14,5 @@ Hari ini, Kamis 27.Nov.2025 saya belajar:<br>
     <li>Menambahkan file baru dengan nama fungsi.php</li>
     <li>Tambah fungsi bersihkan dan tidakkosong</li>
     <li>menambahkan fungsi formattanggal</li>
-    
+    <li>Tambahkan fungsi tampilkanbiodata</li>
 </ol>
