@@ -15,5 +15,5 @@ Hari ini, Kamis 04.Des.2025 saya belajar:<br>
     <li>ketik query untuk membuat tabel tbl_tamu pada kotak isian perintan SQL</li>
     <li>menampilkan data buku tamu dalam tabel HTML dengan output yang diamankan</li>
     <li>menambah record untuk tbl_tamu</li>
-
+    <li>copy dan rename file read.php menjadi read_inc.php</li>
 </ol>
