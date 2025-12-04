@@ -88,8 +88,8 @@ header li a:active {
 }
 
 #about p,
-#contact label,
 #contact p,
+#contact label,
 #biodata label {
   display: flex;
   justify-content: flex-start;
@@ -229,6 +229,7 @@ footer {
   }
 
   #about p,
+  #contact p,
   #contact label,
   #biodata label {
     flex-direction: column;
@@ -236,6 +237,7 @@ footer {
   }
 
   #about strong,
+  #contact strong,
   #contact label>span,
   #biodata label>span {
     text-align: left;
