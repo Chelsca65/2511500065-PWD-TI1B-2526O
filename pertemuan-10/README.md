@@ -13,4 +13,6 @@ Hari ini, Kamis 04.Des.2025 saya belajar:<br>
     <li>login phpMyAdmin</li>
     <li>buat database db_pwd2025</li>
     <li>ketik query untuk membuat tabel tbl_tamu pada kotak isian perintan SQL</li>
+    <li>menampilkan data buku tamu dalam tabel HTML dengan output yang diamankan</li>
+
 </ol>
