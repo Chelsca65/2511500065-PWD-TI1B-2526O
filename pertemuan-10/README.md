@@ -18,4 +18,5 @@ Hari ini, Kamis 04.Des.2025 saya belajar:<br>
     <li>copy dan rename file read.php menjadi read_inc.php</li>
     <li>modif kode read_inc.php</li>
     <li>menambahkan include read_inc.php untuk menampilkan daftar pengirim pesan</li>
+    <li>hapus baris 133-141 di index.php</li>
 </ol>
