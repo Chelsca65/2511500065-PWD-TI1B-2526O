@@ -7,4 +7,5 @@ Hari ini, Kamis 04.Des.2025 saya belajar:<br>
 <ol>
     <li>copy dan ekstrak seluruh file dari elearning (punya dosen)</li>
     <li>hapus file index.html</li>
+    <li>buat file koneksi.php</li>
 </ol>
