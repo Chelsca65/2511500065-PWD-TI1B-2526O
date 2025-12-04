@@ -16,4 +16,6 @@ Hari ini, Kamis 04.Des.2025 saya belajar:<br>
     <li>menampilkan data buku tamu dalam tabel HTML dengan output yang diamankan</li>
     <li>menambah record untuk tbl_tamu</li>
     <li>copy dan rename file read.php menjadi read_inc.php</li>
+    <li>modif kode read_inc.php</li>
+    <li>menambahkan include read_inc.php untuk menampilkan daftar pengirim pesan</li>
 </ol>
