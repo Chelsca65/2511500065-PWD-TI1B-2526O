@@ -9,4 +9,5 @@ Hari ini, Kamis 11.Des.2025 saya belajar:<br>
     <li>update fungsi.php untuk helper redirect sederhana</li>
     <li>tambah penangkap pesan sukses/gagal</li>
     <li>tambah kode flash message</li>
+    <li>tambah sanitasi value dengan htmlspecialchars</li>
 </ol>
