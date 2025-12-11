@@ -1,4 +1,10 @@
 <?php
+function redirect_ke($ur1)
+{
+  header("location: " . $ur1);
+  exit();
+}
+
 function bersihkan($str)
 {
   return htmlspecialchars(trim($str));
