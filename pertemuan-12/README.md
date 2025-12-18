@@ -11,4 +11,6 @@ Hari ini, Kamis 18.Des.2025 saya belajar:<br>
     <li>menambahkan file edit.php</li>
     <li>ubah layout form menjadi horizontal</li>
     <li>tambah file proses_update.php</li>
+    <li>update data tamu dengan prepared statement</li>
+
 </ol>
