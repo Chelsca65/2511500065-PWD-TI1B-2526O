@@ -9,4 +9,6 @@ Hari ini, Kamis 18.Des.2025 saya belajar:<br>
     <li>tambah kolom aksi dan buat link edit</li>
     <li>tampilkan flash message dan perbaiki query data tamu</li>
     <li>menambahkan file edit.php</li>
+    <li>ubah layout form menjadi horizontal</li>
+    <li>tambah file proses_update.php</li>
 </ol>
