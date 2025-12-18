@@ -1,14 +1,28 @@
 <?php
+session_start();
 require 'koneksi.php';
+require 'fungsi.php';
 
 $sql = "SELECT * FROM tbl_tamu ORDER BY cid DESC";
 $q = mysqli_query($conn, $sql);
-
+if (!$q) {
+    die("Query error: " . mysqli_error($conn));
+}
 ?>
 
 <?php
-$no =1;
+$flash_sukses = $_SESSION['flash_sukses'] ?? ''; 
+$flash_error  = $_SESSION['flash_error'] ?? '';  
+
+unset($_SESSION['flash_sukses'], $_SESSION['flash_error']);
 ?>
+
+<?php if (!empty($flash_sukses)) : ?>
+    <div style="padding:10px; margin-bottom:10px;
+        background:#d4edda; color:#155724; border-radius:6px;">
+        <?= $flash_sukses; ?>
+    </div>
+<?php endif; ?>
 
 <table border="1" cellpadding="8" cellspacing="0">
 <tr>
@@ -20,7 +34,7 @@ $no =1;
     <th>Pesan</th>
     <th>Tanggal & Waktu</th>
 </tr>
-
+<?php $no =1; ?>
 <?php while ($row = mysqli_fetch_assoc($q)): ?>
 <tr>
     <td><?= $no++; ?></td>
