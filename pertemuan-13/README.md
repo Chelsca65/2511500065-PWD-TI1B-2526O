@@ -11,4 +11,5 @@ Hari ini, Kamis 08.Jan.2026 saya belajar:<br>
     <li>copy semua kode di proses_update.php ke proses_delete.php</li>
     <li>hapus kode yang tidak diperlukan di file proses_delete.php</li>
     <li>menambahkan parameter cid untuk delete di read.php</li>
+    <li>memperbaiki file proses_delete.php agar menggunakan parameter cid</li>
 </ol>
