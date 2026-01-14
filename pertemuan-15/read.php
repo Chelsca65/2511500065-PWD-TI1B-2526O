@@ -34,7 +34,6 @@ unset($_SESSION['flash_sukses_biodata'], $_SESSION['flash_error_biodata']);
 <table border="1" cellpadding="8" cellspacing="0">
   <tr>
     <th>No</th>
-    <th>aksi</th>
     <th>ID</th>
     <th>NIM</th>
     <th>Nama</th>
@@ -53,10 +52,6 @@ unset($_SESSION['flash_sukses_biodata'], $_SESSION['flash_error_biodata']);
     <tr>
       <td><?= $i++ ?></td>
       <td><?= $row['id']; ?></td>
-      <td>
-        <a href="edit.php?cid=<?= (int)$row['id']; ?>">Edit</a>
-        <a onclick="return confirm('Hapus <?= htmlspecialchars($row['nama_lengkap']); ?> ?')" href="proses_delete.php?cid=<?= (int)$row['id']; ?>">Delete</a>
-      </td>
       <td><?= htmlspecialchars($row['nim']); ?></td>
       <td><?= htmlspecialchars($row['nama_lengkap']); ?></td>
       <td><?= htmlspecialchars($row['tempat_lahir']); ?></td>
