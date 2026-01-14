@@ -10,4 +10,6 @@ Hari ini, Rabu 14.Jan.2026 saya belajar:<br>
     <li>buat file read.php dan tambahkan kode untuk menampilkan data mahasiswa</li>
     <li>buat file read_inc.php dan tambahkan kode untuk menampilkan data mahasiswa</li>
     <li>update fungsi.php untuk helper redirect sederhana (pola PRG)</li>
+    <li>update index.php dengan menambahkan pesan sukses/gagal</li>
+    <li>tambah proses form biodata dengan validasi dan insert tabel biodata_mahasiswa dengan prepared statement</li>
 </ol>
