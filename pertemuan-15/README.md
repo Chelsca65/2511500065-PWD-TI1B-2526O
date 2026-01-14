@@ -17,4 +17,5 @@ Hari ini, Rabu 14.Jan.2026 saya belajar:<br>
     <li>buat file baru dengan nama edit.php dan ketik kode untuk menampilkan form dengan data lama yang dibaca berdasarkan cid</li>
     <li>buat file baru dengan nama proses_update.php dan ketik kode untuk menyimpan perubahan menggunakan query UPDATE</li>
     <li>menambah link delete untuk ke file proses_delete.php</li>
+    <li>tambahkan kode di proses_delete.php</li>
 </ol>

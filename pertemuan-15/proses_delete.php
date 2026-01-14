@@ -1,133 +1,225 @@
 <?php
 session_start();
-require_once __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
+?>
 
-// cek method form, hanya izinkan POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $_SESSION['flash_error_biodata'] = 'Akses tidak valid.';
-    redirect_ke('read.php');
-}
+<!DOCTYPE html>
+<html lang="en">
 
-// validasi cid wajib angka dan > 0
-$cid = filter_input(INPUT_POST, 'cid', FILTER_VALIDATE_INT, [
-    'options' => ['min_range' => 1],
-]);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul Halaman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-if (!$cid) {
-    $_SESSION['flash_error_biodata'] = 'CID tidak valid.';
-    redirect_ke('read.php');
-}
+<body>
+  <header>
+    <h1>Ini Header</h1>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+      &#9776;
+    </button>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-// ambil dan bersihkan (sanitasi) nilai dari form
-$nim           = bersihkan($_POST['txtNim']       ?? '');
-$nama          = bersihkan($_POST['txtNmLengkap'] ?? '');
-$tempat_lahir  = bersihkan($_POST['txtT4Lhr']     ?? '');
-$tanggal_lahir = bersihkan($_POST['txtTglLhr']    ?? '');
-$hobi          = bersihkan($_POST['txtHobi']      ?? '');
-$pasangan      = bersihkan($_POST['txtPasangan']  ?? '');
-$pekerjaan     = bersihkan($_POST['txtKerja']     ?? '');
-$orang_tua     = bersihkan($_POST['txtNmOrtu']    ?? '');
-$kakak         = bersihkan($_POST['txtNmKakak']   ?? '');
-$adik          = bersihkan($_POST['txtNmAdik']    ?? '');
+  <main>
+    <section id="home">
+      <h2>Selamat Datang</h2>
+      <?php
+      echo "halo dunia!<br>";
+      echo "nama saya hadi";
+      ?>
+      <p>Ini contoh paragraf HTML.</p>
+    </section>
 
-// Validasi sederhana
-$errors = [];
+    <?php
+    $flash_sukses_biodata = $_SESSION['flash_sukses_biodata'] ?? '';
+    $flash_error_biodata  = $_SESSION['flash_error_biodata']  ?? '';
+    $old_biodata = $_SESSION['old_biodata'] ?? [];
 
-if ($nim === '') {
-    $errors[] = 'NIM wajib diisi.';
-}
 
-if ($nama === '') {
-    $errors[] = 'Nama minimal 3 karakter.';
-} elseif (strlen($nama) < 3) {
-    $errors[] = 'Nama minimal 3 karakter.';
-}
+    unset($_SESSION['flash_sukses_biodata'], $_SESSION['flash_error_biodata'], $_SESSION['old_biodata']);
+    ?>
 
-if (
-    $tanggal_lahir !== '' &&
-    !preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal_lahir)
-) {
-    $errors[] = 'Format tanggal lahir harus YYYY-MM-DD.';
-}
+    <section id="biodata">
+      <h2>Biodata Sederhana Mahasiswa</h2>
 
-if (!empty($errors)) {
-    $_SESSION['old_biodata'] = [
-        'txtNim'       => $nim,
-        'txtNmLengkap' => $nama,
-        'txtT4Lhr'     => $tempat_lahir,
-        'txtTglLhr'    => $tanggal_lahir,
-        'txtHobi'      => $hobi,
-        'txtPasangan'  => $pasangan,
-        'txtKerja'     => $pekerjaan,
-        'txtNmOrtu'    => $orang_tua,
-        'txtNmKakak'   => $kakak,
-        'txtNmAdik'    => $adik,
+      <?php if (!empty($flash_sukses_biodata)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
+          <?= $flash_sukses_biodata ?>
+        </div>
+      <?php endif; ?>
+
+
+      <?php if (!empty($flash_error_biodata)): ?>
+        <div style="padding: 10px; margin-bottom:10px; background:#f8d7da; color:#721c24; border-radius:6px;">
+          <?= $flash_error_biodata ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="proses.php" method="POST">
+
+        <label for="txtNim"><span>NIM:</span>
+          <input type="text" id="txtNim" name="txtNim"
+            placeholder="Masukkan NIM" required
+            value="<?= htmlspecialchars($old_biodata['txtNim'] ?? '') ?>">
+        </label>
+
+        <label for="txtNmLengkap"><span>Nama Lengkap:</span>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap"
+            placeholder="Masukkan Nama Lengkap" required
+            value="<?= htmlspecialchars($old_biodata['txtNmLengkap'] ?? '') ?>">
+        </label>
+
+        <label for="txtT4Lhr"><span>Tempat Lahir:</span>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr"
+            placeholder="Masukkan Tempat Lahir" required
+            value="<?= htmlspecialchars($old_biodata['txtT4Lhr'] ?? '') ?>">
+        </label>
+
+        <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+          <input type="text" id="txtTglLhr" name="txtTglLhr"
+            placeholder="YYYY-MM-DD" required
+            value="<?= htmlspecialchars($old_biodata['txtTglLhr'] ?? '') ?>">
+        </label>
+
+        <label for="txtHobi"><span>Hobi:</span>
+          <input type="text" id="txtHobi" name="txtHobi"
+            placeholder="Masukkan Hobi" required
+            value="<?= htmlspecialchars($old_biodata['txtHobi'] ?? '') ?>">
+        </label>
+
+        <label for="txtPasangan"><span>Pasangan:</span>
+          <input type="text" id="txtPasangan" name="txtPasangan"
+            placeholder="Masukkan Pasangan" required
+            value="<?= htmlspecialchars($old_biodata['txtPasangan'] ?? '') ?>">
+        </label>
+
+        <label for="txtKerja"><span>Pekerjaan:</span>
+          <input type="text" id="txtKerja" name="txtKerja"
+            placeholder="Masukkan Pekerjaan" required
+            value="<?= htmlspecialchars($old_biodata['txtKerja'] ?? '') ?>">
+        </label>
+
+        <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu"
+            placeholder="Masukkan Nama Orang Tua" required
+            value="<?= htmlspecialchars($old_biodata['txtNmOrtu'] ?? '') ?>">
+        </label>
+
+        <label for="txtNmKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNmKakak" name="txtNmKakak"
+            placeholder="Masukkan Nama Kakak" required
+            value="<?= htmlspecialchars($old_biodata['txtNmKakak'] ?? '') ?>">
+        </label>
+
+        <label for="txtNmAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNmAdik" name="txtNmAdik"
+            placeholder="Masukkan Nama Adik" required
+            value="<?= htmlspecialchars($old_biodata['txtNmAdik'] ?? '') ?>">
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+    </section>
+
+    <?php
+    $biodata = $_SESSION["biodata"] ?? [];
+
+    $fieldConfig = [
+      "nim" => ["label" => "NIM:", "suffix" => ""],
+      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
+      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
+      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
+      "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
+      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
+      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
     ];
+    ?>
 
-    $_SESSION['flash_error_biodata'] = implode('<br>', $errors);
-    redirect_ke('edit.php?cid=' . (int)$cid);
-}
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <?php include 'read_inc.php'; ?>
+    </section>
 
-// Prepared statement untuk UPDATE biodata_mahasiswa
-$sql = "UPDATE biodata_mahasiswa
-        SET nim = ?,
-            nama_lengkap = ?,
-            tempat_lahir = ?,
-            tanggal_lahir = ?,
-            hobi = ?,
-            pasangan = ?,
-            pekerjaan = ?,
-            nama_orang_tua = ?,
-            nama_kakak = ?,
-            nama_adik = ?
-        WHERE id = ?"; // ganti 'id' jika nama kolom PK berbeda
+    <?php
 
-$stmt = mysqli_prepare($conn, $sql);
-if (!$stmt) {
-    $_SESSION['flash_error_biodata'] = 'Terjadi kesalahan sistem (prepare gagal).';
-    redirect_ke('edit.php?cid=' . (int)$cid);
-}
+    $flash_sukses = $_SESSION['flash_sukses'] ?? [];
+    $flash_error = $_SESSION['flash_error'] ?? [];
+    $old = $_SESSION['old'] ?? [];
 
-mysqli_stmt_bind_param(
-    $stmt,
-    "ssssssssssi",
-    $nim,
-    $nama,
-    $tempat_lahir,
-    $tanggal_lahir,
-    $hobi,
-    $pasangan,
-    $pekerjaan,
-    $orang_tua,
-    $kakak,
-    $adik,
-    $cid
-);
 
-if (mysqli_stmt_execute($stmt)) {
-    mysqli_stmt_close($stmt);
+    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']);
+    ?>
 
-    unset($_SESSION['old_biodata']);
+    <section id="contact">
+      <h2>Kontak Kami</h2>
 
-    $_SESSION['flash_sukses_biodata'] = 'Terima kasih, data biodata Anda sudah diperbaharui.';
-    redirect_ke('read.php'); // kembali ke daftar biodata
-} else {
-    mysqli_stmt_close($stmt);
+      <?php if (!empty($flash_sukses)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
+          <?= $flash_sukses ?>
+        </div>
+      <?php endif; ?>
 
-    $_SESSION['old_biodata'] = [
-        'txtNim'       => $nim,
-        'txtNmLengkap' => $nama,
-        'txtT4Lhr'     => $tempat_lahir,
-        'txtTglLhr'    => $tanggal_lahir,
-        'txtHobi'      => $hobi,
-        'txtPasangan'  => $pasangan,
-        'txtKerja'     => $pekerjaan,
-        'txtNmOrtu'    => $orang_tua,
-        'txtNmKakak'   => $kakak,
-        'txtNmAdik'    => $adik,
-    ];
 
-    $_SESSION['flash_error_biodata'] = 'Data biodata gagal diperbaharui. Silakan coba lagi.';
-    redirect_ke('edit.php?cid=' . (int)$cid);
-}
+      <?php if (!empty($flash_error)): ?>
+        <div style="padding: 10px; margin-bottom:10px; background:#f8d7da; color:#155724; border-radius:6px;">
+          <?= $flash_error ?>
+        </div>
+      <?php endif; ?>
+
+
+      <form action="proses.php" method="POST">
+
+        <label for="txtNama"><span>Nama:</span>
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama"
+            required autocomplete="name"
+            value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
+        </label>
+
+        <label for="txtEmail"><span>Email:</span>
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email"
+            required autocomplete="email"
+            value="<?= isset($old['email']) ? htmlspecialchars($old['email']) : '' ?>">
+        </label>
+
+        <label for="txtPesan"><span>Pesan Anda:</span>
+          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..."
+            required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
+          <small id="charCount">0/200 karakter</small>
+        </label>
+
+        <label>
+          <span>2 + 3 :</span>
+          <input type="text" name="captcha" placeholder="jawaban" required>
+        </label>
+
+        <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
+      </form>
+
+      <br>
+      <hr>
+      <h2>Yang menghubungi kami</h2>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
