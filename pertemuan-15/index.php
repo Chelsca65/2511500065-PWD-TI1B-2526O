@@ -38,6 +38,15 @@ require_once __DIR__ . '/fungsi.php';
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
+    <?php
+    $flash_sukses_biodata = $_SESSION['flash_sukses_biodata'] ?? '';
+    $flash_error_biodata  = $_SESSION['flash_error_biodata']  ?? '';
+    $old_biodata = $_SESSION['old_biodata'] ?? [];
+
+
+    unset($_SESSION['flash_sukses_biodata'], $_SESSION['flash_error_biodata'], $_SESSION['old_biodata']);
+    ?>
+
     <section id="biodata">
       <h2>Biodata Sederhana Mahasiswa</h2>
       <form action="proses.php" method="POST">
@@ -106,7 +115,7 @@ require_once __DIR__ . '/fungsi.php';
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
+      <?php include 'read_inc.php'; ?>
     </section>
 
     <section id="contact">
