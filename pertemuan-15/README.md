@@ -14,4 +14,5 @@ Hari ini, Rabu 14.Jan.2026 saya belajar:<br>
     <li>tambah proses form biodata dengan validasi dan insert tabel biodata_mahasiswa dengan prepared statement</li>
     <li>buat kolom aksi dan tambahkan link edit</li>
     <li>tambahkan penampil flash sukses dan flash error di read.php</li>
+    <li>buat file baru dengan nama edit.php dan ketik kode untuk menampilkan form dengan data lama yang dibaca berdasarkan cid</li>
 </ol>
