@@ -12,4 +12,6 @@ Hari ini, Rabu 14.Jan.2026 saya belajar:<br>
     <li>update fungsi.php untuk helper redirect sederhana (pola PRG)</li>
     <li>update index.php dengan menambahkan pesan sukses/gagal</li>
     <li>tambah proses form biodata dengan validasi dan insert tabel biodata_mahasiswa dengan prepared statement</li>
+    <li>buat kolom aksi dan tambahkan link edit</li>
+    <li>tambahkan penampil flash sukses dan flash error di read.php</li>
 </ol>
