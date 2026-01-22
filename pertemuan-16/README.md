@@ -2,7 +2,7 @@ NIM : 2511500065<br>
 Nama : Chelsea Clarisa<br>
 
 
-Hari ini, Rabu 14.Jan.2026 saya belajar:<br>
+Hari ini, Rabu 22.Jan.2026 saya belajar:<br>
 <ol>
     <li>copy dan ekstrak seluruh file dari dosen ke pertemuan-16</li>
 </ol>
