@@ -87,6 +87,22 @@ require_once __DIR__ . '/fungsi.php';
       </form>
     </section>
 
+    <?php
+    $biodata = $_SESSION["biodata"] ?? [];
+
+    $fieldConfig = [
+      "kodepen" => ["label" => "Kode Pengunjung:", "suffix" => ""],
+      "nama" => ["label" => "Nama Pengunjung:", "suffix" => " &#128526;"],
+      "alamat" => ["label" => "Alamat Rumah:", "suffix" => ""],
+      "tanggal" => ["label" => "Tanggal Kunjungan:", "suffix" => ""],
+      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
+      "slta" => ["label" => "Asal SLTA:", "suffix" => " &hearts;"],
+      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+      "pacar" => ["label" => "Nama Pacar:", "suffix" => ""],
+      "mantan" => ["label" => "Nama Mantan:", "suffix" => ""],
+    ];
+    ?>
 
     <section id="about">
       <h2>Tentang Saya</h2>

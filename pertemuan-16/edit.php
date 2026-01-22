@@ -61,11 +61,6 @@ if (!$data) {
 
   <h2>Edit Biodata Pengunjung</h2>
 
-  <?php if ($flash_error): ?>
-        <div style="padding:10px;background:#f8d7da;color:#721c24;border-radius:6px;">
-            <?= $flash_error ?>
-        </div>
-    <?php endif; ?>
 
   <form action="proses_update.php" method="post">
     <input type="hidden" name="cid" value="<?= $id ?>">
