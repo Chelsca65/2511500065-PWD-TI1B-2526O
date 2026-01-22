@@ -40,7 +40,7 @@ require_once __DIR__ . '/fungsi.php';
 
     <section id="biodata">
       <h2>Biodata Pengunjung</h2>
-      <form action="proses.php" method="POST">
+      <form action="proses_biodata.php" method="POST">
 
         <label for="txtKodePen"><span>Kode Pengunjung:</span>
           <input type="text" id="txtKodePen" name="txtKodePen" placeholder="Masukkan Kode Pengunjung" required>
@@ -87,26 +87,11 @@ require_once __DIR__ . '/fungsi.php';
       </form>
     </section>
 
-    <?php
-    $biodata = $_SESSION["biodata"] ?? [];
-
-    $fieldConfig = [
-      "kodepen" => ["label" => "Kode Pengunjung:", "suffix" => ""],
-      "nama" => ["label" => "Nama Pengunjung:", "suffix" => " &#128526;"],
-      "alamat" => ["label" => "Alamat Rumah:", "suffix" => ""],
-      "tanggal" => ["label" => "Tanggal Kunjungan:", "suffix" => ""],
-      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
-      "slta" => ["label" => "Asal SLTA:", "suffix" => " &hearts;"],
-      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
-      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
-      "pacar" => ["label" => "Nama Pacar:", "suffix" => ""],
-      "mantan" => ["label" => "Nama Mantan:", "suffix" => ""],
-    ];
-    ?>
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?= tampilkanBiodata($fieldConfig, $biodata) ?>
+      <?php include 'read_inc.php'; ?>
+      
     </section>
 
     <?php
@@ -165,7 +150,7 @@ require_once __DIR__ . '/fungsi.php';
       <br>
       <hr>
       <h2>Yang menghubungi kami</h2>
-      <?php include 'read_inc.php'; ?>
+      
     </section>
   </main>
 

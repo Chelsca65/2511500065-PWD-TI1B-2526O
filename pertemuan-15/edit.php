@@ -12,14 +12,15 @@ if (!$cid) {
     redirect_ke('read.php');
 }
 
-$stmt = mysqli_prepare(
-    $conn,
-    "SELECT id, nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi,
-            pasangan, pekerjaan, nama_orang_tua, nama_kakak, nama_adik
-     FROM biodata_mahasiswa
-     WHERE id = ?
-     LIMIT 1"
-);
+/* ambil data lama */
+$stmt = mysqli_prepare($conn, "
+    SELECT id, nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi,
+           pasangan, pekerjaan, nama_orang_tua, nama_kakak, nama_adik
+    FROM biodata_mahasiswa
+    WHERE id = ?
+    LIMIT 1
+");
+
 if (!$stmt) {
     $_SESSION['flash_error_biodata'] = 'Query tidak benar.';
     redirect_ke('read.php');
@@ -36,126 +37,103 @@ if (!$row) {
     redirect_ke('read.php');
 }
 
-// nilai awal dari DB
-    $nim           = $row['nim']             ?? '';
-    $nama          = $row['nama_lengkap']    ?? '';
-    $tempat_lahir  = $row['tempat_lahir']    ?? '';
-    $tanggal_lahir = $row['tanggal_lahir']   ?? '';
-    $hobi          = $row['hobi']            ?? '';
-    $pasangan      = $row['pasangan']        ?? '';
-    $pekerjaan     = $row['pekerjaan']       ?? '';
-    $orang_tua     = $row['nama_orang_tua']  ?? '';
-    $kakak         = $row['nama_kakak']      ?? '';
-    $adik          = $row['nama_adik']       ?? '';
+/* nilai awal */
+$nim           = $row['nim'];
+$nama          = $row['nama_lengkap'];
+$tempat_lahir  = $row['tempat_lahir'];
+$tanggal_lahir = $row['tanggal_lahir'];
+$hobi          = $row['hobi'];
+$pasangan      = $row['pasangan'];
+$pekerjaan     = $row['pekerjaan'];
+$orang_tua     = $row['nama_orang_tua'];
+$kakak         = $row['nama_kakak'];
+$adik          = $row['nama_adik'];
 
-// error & old
-$flash_error   = $_SESSION['flash_error_biodata'] ?? '';
-$old_biodata   = $_SESSION['old_biodata']        ?? [];
+/* error & old */
+$flash_error = $_SESSION['flash_error_biodata'] ?? '';
+$old = $_SESSION['old_biodata'] ?? [];
 unset($_SESSION['flash_error_biodata'], $_SESSION['old_biodata']);
 
-if (!empty($old_biodata)) {
-    $nim           = $old_biodata['txtNim']       ?? $nim;
-    $nama          = $old_biodata['txtNmLengkap'] ?? $nama;
-    $tempat_lahir  = $old_biodata['txtT4Lhr']     ?? $tempat_lahir;
-    $tanggal_lahir = $old_biodata['txtTglLhr']    ?? $tanggal_lahir;
-    $hobi          = $old_biodata['txtHobi']      ?? $hobi;
-    $pasangan      = $old_biodata['txtPasangan']  ?? $pasangan;
-    $pekerjaan     = $old_biodata['txtKerja']     ?? $pekerjaan;
-    $orang_tua     = $old_biodata['txtNmOrtu']    ?? $orang_tua;
-    $kakak         = $old_biodata['txtNmKakak']   ?? $kakak;
-    $adik          = $old_biodata['txtNmAdik']    ?? $adik;
+if ($old) {
+    $nim           = $old['txtNim']       ?? $nim;
+    $nama          = $old['txtNmLengkap'] ?? $nama;
+    $tempat_lahir  = $old['txtT4Lhr']     ?? $tempat_lahir;
+    $tanggal_lahir = $old['txtTglLhr']    ?? $tanggal_lahir;
+    $hobi          = $old['txtHobi']      ?? $hobi;
+    $pasangan      = $old['txtPasangan']  ?? $pasangan;
+    $pekerjaan     = $old['txtKerja']     ?? $pekerjaan;
+    $orang_tua     = $old['txtNmOrtu']    ?? $orang_tua;
+    $kakak         = $old['txtNmKakak']   ?? $kakak;
+    $adik          = $old['txtNmAdik']    ?? $adik;
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judul Halaman</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Edit Biodata Mahasiswa</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Ini Header</h1>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-            &#9776;
-        </button>
-        <nav>
-            <ul>
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
+<h2>Edit Biodata Mahasiswa</h2>
 
-        <section id="biodata">
-            <h2>Edit Biodata Mahasiswa</h2>
-            <?php if (!empty($flash_error)): ?>
-                <div style="padding:10px; margin-bottom:10px; 
-            background:#f8d7da; color:#721c24; border-radius:6px;">
-                    <?= $flash_error; ?>
-                </div>
-            <?php endif; ?>
-            <form action="proses.php" method="POST">
+<?php if ($flash_error): ?>
+<div style="padding:10px;background:#f8d7da;color:#721c24;border-radius:6px;">
+    <?= $flash_error ?>
+</div>
+<?php endif; ?>
 
-                <input type="text" name="cid" value="<?= (int)$cid; ?>">
+<form action="proses_update_biodata.php" method="POST">
 
-                <label for="txtNim"><span>NIM:</span>
-                    <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required
-                        value="<?= !empty($nim) ? $nim : '' ?>">
-                </label>
+<input type="hidden" name="cid" value="<?= (int)$cid ?>">
 
-                <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-                    <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required
-                        value="<?= !empty($nama) ? $nama : '' ?>">
-                </label>
+<label>NIM
+<input type="text" name="txtNim" value="<?= htmlspecialchars($nim) ?>" required>
+</label>
 
-                <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-                    <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required
-                        value="<?= !empty($tempat_lahir) ? $tempat_lahir : '' ?>">
-                </label>
+<label>Nama Lengkap
+<input type="text" name="txtNmLengkap" value="<?= htmlspecialchars($nama) ?>" required>
+</label>
 
-                <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-                    <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required
-                        value="<?= !empty($tanggal_lahir) ? $tanggal_lahir : '' ?>">
-                </label>
+<label>Tempat Lahir
+<input type="text" name="txtT4Lhr" value="<?= htmlspecialchars($tempat_lahir) ?>" required>
+</label>
 
-                <label for="txtHobi"><span>Hobi:</span>
-                    <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required
-                        value="<?= !empty($hobi) ? $hobi : '' ?>">
-                </label>
+<label>Tanggal Lahir
+<input type="text" name="txtTglLhr" value="<?= htmlspecialchars($tanggal_lahir) ?>" required>
+</label>
 
-                <label for="txtPasangan"><span>Pasangan:</span>
-                    <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required
-                        value="<?= !empty($pasangan) ? $pasangan : '' ?>">
-                </label>
+<label>Hobi
+<input type="text" name="txtHobi" value="<?= htmlspecialchars($hobi) ?>" required>
+</label>
 
-                <label for="txtKerja"><span>Pekerjaan:</span>
-                    <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required
-                        value="<?= !empty($pekerjaan) ? $pekerjaan : '' ?>">
-                </label>
+<label>Pasangan
+<input type="text" name="txtPasangan" value="<?= htmlspecialchars($pasangan) ?>">
+</label>
 
-                <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-                    <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required
-                        value="<?= !empty($orang_tua) ? $orang_tua : '' ?>">
-                </label>
+<label>Pekerjaan
+<input type="text" name="txtKerja" value="<?= htmlspecialchars($pekerjaan) ?>" required>
+</label>
 
-                <label for="txtNmKakak"><span>Nama Kakak:</span>
-                    <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required
-                        value="<?= !empty($kakak) ? $kakak : '' ?>">
-                </label>
+<label>Nama Orang Tua
+<input type="text" name="txtNmOrtu" value="<?= htmlspecialchars($orang_tua) ?>" required>
+</label>
 
-                <label for="txtNmAdik"><span>Nama Adik:</span>
-                    <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required
-                        value="<?= !empty($adik) ? $adik : '' ?>">
-                </label>
+<label>Nama Kakak
+<input type="text" name="txtNmKakak" value="<?= htmlspecialchars($kakak) ?>">
+</label>
 
-                <button type="submit">Kirim</button>
-                <button type="reset">Batal</button>
-            </form>
-        </section>
+<label>Nama Adik
+<input type="text" name="txtNmAdik" value="<?= htmlspecialchars($adik) ?>">
+</label>
+
+<button type="submit">Update</button>
+<a href="read.php">Batal</a>
+
+</form>
+
+</body>
+</html>

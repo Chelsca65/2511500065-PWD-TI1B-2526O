@@ -48,7 +48,7 @@ require_once __DIR__ . '/fungsi.php';
     ?>
 
     <section id="biodata">
-      <h2>Biodata Sederhana Mahasiswa</h2>
+      <h2>Biodata Pengunjung</h2>
 
       <?php if (!empty($flash_sukses_biodata)): ?>
         <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
