@@ -18,4 +18,6 @@ Hari ini, Rabu 14.Jan.2026 saya belajar:<br>
     <li>buat file baru dengan nama proses_update.php dan ketik kode untuk menyimpan perubahan menggunakan query UPDATE</li>
     <li>menambah link delete untuk ke file proses_delete.php</li>
     <li>tambahkan kode di proses_delete.php</li>
+    <li>memperbaiki file proses_delete.php agar menggunakan parameter cid</li>
+    <li>konfirmasi sebelum menghapus</li>
 </ol>
